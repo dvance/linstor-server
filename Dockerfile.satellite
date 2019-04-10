@@ -32,7 +32,7 @@ RUN cd ${HOME} && \
   sed -i "s/^Version:.*/Version: $LINSTOR_VERSION/" linstor.spec && \
   PATH=/opt/gradle/gradle-$GRADLE_VERSION/bin:$PATH rpmbuild -bb --define "debug_package %{nil}"  linstor.spec
 
-FROM registry.connect.redhat.com/linbit/drbd-utils
+FROM registry.redhat.io/linbit/drbd-utils
 MAINTAINER Roland Kammerer <roland.kammerer@linbit.com>
 #COPY --from=builder /home/makepkg/*.deb /tmp/
 #RUN apt-get update -y
